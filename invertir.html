@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px '.AppleSystemUIFontMonospaced'; color: #519ce9}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px '.AppleSystemUIFontMonospaced'; color: #9ba2b1}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px '.AppleSystemUIFontMonospaced'; color: #d65562}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px '.AppleSystemUIFontMonospaced'; color: #88b966}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px '.AppleSystemUIFontMonospaced'; color: #4a505d}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px '.AppleSystemUIFontMonospaced'; color: #9ba2b1; min-height: 16.0px}
+    span.s1 {color: #b85dd5}
+    span.s2 {color: #d65562}
+    span.s3 {color: #c58853}
+    span.s4 {color: #88b966}
+    span.s5 {color: #9ba2b1}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE <span class="s1">html</span>&gt;</p>
+<p class="p2">&lt;<span class="s2">html</span> <span class="s3">lang</span>=<span class="s4">"en"</span>&gt;</p>
+<p class="p3"><span class="s5">&lt;</span>head<span class="s5">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;<span class="s2">meta</span> <span class="s3">charset</span>=<span class="s4">"UTF-8"</span>&gt;</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span>&lt;</span><span class="s2">meta</span><span class="s5"> </span><span class="s3">name</span><span class="s5">=</span>"viewport"<span class="s5"> </span><span class="s3">content</span><span class="s5">=</span>"width=device-width, initial-scale=1.0"<span class="s5">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;<span class="s2">title</span>&gt;Invertir Frase&lt;/<span class="s2">title</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;<span class="s2">script</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1">function</span> invertirFrase(frase) {</p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">            </span></span>// Invierte la frase y la devuelve</p>
+<p class="p2"><span class="Apple-converted-space">            </span><span class="s1">return</span> frase.split(<span class="s4">''</span>).reverse().join(<span class="s4">''</span>);</p>
+<p class="p2"><span class="Apple-converted-space">        </span>}</p>
+<p class="p6"><br></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span>// Escucha mensajes del WebViewer</p>
+<p class="p2"><span class="Apple-converted-space">        </span>window.addEventListener(<span class="s4">'message'</span>, <span class="s1">function</span>(event) {</p>
+<p class="p2"><span class="Apple-converted-space">            </span><span class="s1">if</span> (event.data &amp;&amp; event.data.type === <span class="s4">'invertir'</span>) {</p>
+<p class="p2"><span class="Apple-converted-space">                </span><span class="s1">const</span> resultado = invertirFrase(event.data.text);</p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">                </span></span>// Devuelve el resultado a MIT App Inventor</p>
+<p class="p2"><span class="Apple-converted-space">                </span>window.parent.postMessage({ <span class="s3">type</span>: <span class="s4">'resultado'</span>, <span class="s3">text</span>: resultado }, <span class="s4">'*'</span>);</p>
+<p class="p2"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/<span class="s2">script</span>&gt;</p>
+<p class="p3"><span class="s5">&lt;/</span>head<span class="s5">&gt;</span></p>
+<p class="p3"><span class="s5">&lt;</span>body<span class="s5">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;<span class="s2">h1</span>&gt;Inversor de Frases&lt;/<span class="s2">h1</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;<span class="s2">p</span>&gt;Esta página funciona como soporte para MIT App Inventor.&lt;/<span class="s2">p</span>&gt;</p>
+<p class="p3"><span class="s5">&lt;/</span>body<span class="s5">&gt;</span></p>
+<p class="p3"><span class="s5">&lt;/</span>html<span class="s5">&gt;</span></p>
+</body>
+</html>
